@@ -164,16 +164,18 @@ li {
 					display: -webkit-inline-flex;
 					align-items: baseline;
 				    justify-content: space-between;
-				    width: 32%;
+				    width: 176px/$ppr;
 					div {
 						width: 25px/$ppr;
 						height: 25px/$ppr;
 					}
 					.checked {
 					    background: url(../images/StarOrange.png) round;
+					    background-size: 100% 100%;
 					}
 					.unchecked {
 					    background: url(../images/StarGrey.png) round;
+					    background-size: 100% 100%;
 					}
 				}
 			}

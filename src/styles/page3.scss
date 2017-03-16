@@ -152,9 +152,11 @@ $ppr: 750px/16/1rem;
 		}
 		.checked {
 		    background: url(../images/StarOrange.png) round;
+		    background-size: 100% 100%;
 		}
 		.unchecked {
 		    background: url(../images/StarGrey.png) round;
+		    background-size: 100% 100%;
 		}
 	}
 }
