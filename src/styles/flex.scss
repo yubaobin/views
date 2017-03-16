@@ -1,0 +1,61 @@
+$ppr: 640px/16/1rem;
+$red : #FF0000;
+$orange : #FFA500;
+$yellow : #FFFF00;
+$green : #008000;
+$bluegreen : #00FFFF;
+$blue : #0000FF;
+$purple : #800080;
+
+//定义一个list
+$bgcolorlist: $red $orange $yellow $green $bluegreen $blue $purple;  
+#flex {
+	section {
+		display: flex;
+		flex-wrap: wrap;
+		
+		div {
+			text-align: center;
+			width: 100px/$ppr;
+			height: 100px/$ppr;
+			margin: 10px;
+			@for $i from 1 to length($bgcolorlist)+1 {
+				&:nth-of-type(#{$i}) {
+					background-color: nth($bgcolorlist,$i); 
+				}
+			}
+		}
+		&:nth-of-type(1) {
+			justify-content: space-around;
+		}
+		&:nth-of-type(2) {
+			justify-content: space-between;
+		}
+		&:nth-of-type(3) {
+			justify-content: space-between;
+			align-items: flex-end;
+			div {
+				@for $i from 1 to 6 {
+					&:nth-of-type(#{$i}) {
+						height: $i * 100px/$ppr;
+					}
+				}
+			}
+		}
+		&:nth-of-type(4) {
+			justify-content: space-between;
+			align-items: center;
+			div {
+				@for $i from 1 to 6 {
+					&:nth-of-type(#{$i}) {
+						height: $i * 100px/$ppr;
+					}
+				}
+			}
+		}
+	}	
+	.separation {
+		border: 1px solid #000;
+		margin: 10px 0;
+	}
+}

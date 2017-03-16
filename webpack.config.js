@@ -6,9 +6,10 @@ const myConfig = require('./config/config');
 const appPath = path.resolve(__dirname,'./src/');
 const jsPath = path.resolve(__dirname,'./src/js/');
 
-const port = 8086;
+const port = 8085;
 let config = {
 	entry: {
+		mobile: jsPath + "/mobile",
 		app: myConfig.pagejs
 	},
 	output: {
@@ -43,14 +44,21 @@ let config = {
 	          fallback: "style-loader",
 	          loader: ["css-loader","sass-loader"]
 	        })
-	      }]
+	    },{
+	        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+	        use: [{
+	        	loader:'url-loader',
+	        	options: {limit: 10000}
+	        }]
+	     }]
 	},
 	resolve: {
 		//自动扩展文件后缀，在使用require时省略后缀名
         extensions: ['.js', '.json', '.jsx', '.vue','.scss'],
         alias: {
         	'styles': path.resolve(__dirname,'./src/styles/'),
-        	'view': path.resolve(__dirname,'./src/views')
+        	'view': path.resolve(__dirname,'./src/views'),
+        	'image': path.resolve(__dirname,'./src/images'),
         }
 	},
 	// 服务器配置相关，自动刷新!
