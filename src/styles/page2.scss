@@ -57,6 +57,16 @@ li {
 		width: 100%;
 		height: 500px/$ppr;	
 		position: relative;
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+			.swiper-wrapper {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				display: -webkit-flex;
+			}
+		}
 		img {
 			width: 750px/$ppr;
 			height: 100%;
@@ -68,13 +78,13 @@ li {
 			justify-content: center;
 			display: flex;
 			display: -webkit-flex;
-			.page-item {
+			.swiper-pagination-bullet {
 				width: 20px/$ppr;
 				height: 20px/$ppr;
 				border-radius: 20px;
 				background-color: #FFF;
 				margin-right: 20px/$ppr;
-				&:first-child {
+				&.swiper-pagination-bullet-active {
 					background-color: #E02657;
 				}
 				&:last-child {

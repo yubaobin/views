@@ -1,5 +1,4 @@
 require('styles/3Dpage');
-
 $(function(){
 	$('#rangeValue').html($('#range').val());
 	$('.container').css('perspective',$('#range').val() + "px")

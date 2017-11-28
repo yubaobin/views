@@ -33,6 +33,11 @@
 		}
 	}
 }
+.form {
+	input:checked ~ label {
+		color: #CDCDCD;
+	}
+}
 
 @keyframes rotate {
 	0% {
